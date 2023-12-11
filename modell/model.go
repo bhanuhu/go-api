@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"time"
 
+	"../../abc.ev"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -19,7 +20,7 @@ type Podcast struct {
 
 func main() {
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-	client, err := mongo.Connect(ctx, options.Client().ApplyURI("mongodb+srv://bhanuaggarwal47:DLYtCKURSs7Xk5r3@cluster0.tnqheg0.mongodb.net/"))
+	client, err := mongo.Connect(ctx, options.Client().ApplyURI(abc.Uri))
 	if err != nil {
 		panic(err)
 	}
